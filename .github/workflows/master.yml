@@ -1,0 +1,30 @@
+name: CI/CD. 
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+
+jobs:
+# Mobile folder job.
+  build_apk:
+    name: Build apk
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+      # Mobile folder working directory.
+        working-directory: mobile
+
+    steps:
+      - uses: actions/checkout@v2 
+
+      - uses: dorny/paths-filter@v2
+        id: filter
+        with:
+          filters: |
+            mobile:
+              - 'mobile/**'     
+      - name: print hello world
+        run: echo "Mobile"
