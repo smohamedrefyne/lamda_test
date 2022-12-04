@@ -26,5 +26,7 @@ jobs:
           filters: |
             mobile:
               - 'mobile/**'     
+              
       - name: print hello world
+        if: steps.filter.outputs.Mobile == 'true'
         run: echo "Mobile"
