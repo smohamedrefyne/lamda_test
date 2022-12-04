@@ -4,7 +4,7 @@ import json
 import os
 
 def lambda_handler(event, context):
-    print ("Hello world")
+    print ("Hello web")
 
     return {
         'statusCode': 200,
