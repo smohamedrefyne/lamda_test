@@ -8,9 +8,30 @@ on:
     - main
 
 jobs:
-# Mobile folder job.
-  build_apk:
-    name: Build apk
+  web:
+    name: web
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+      # Mobile folder working directory.
+        working-directory: web
+
+    steps:
+      - uses: actions/checkout@v2 
+
+      - uses: dorny/paths-filter@v2
+        id: filter
+        with:
+          filters: |
+            web:
+              - 'web/**'     
+              
+      - name: print hello web
+        if: steps.filter.outputs.web == 'true'
+        run: echo "web"
+ 
+  mobile:
+    name: mobile
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -28,5 +49,5 @@ jobs:
               - 'mobile/**'     
               
       - name: print hello world
-        if: steps.filter.outputs.Mobile == 'true'
+        if: steps.filter.outputs.mobile == 'true'
         run: echo "Mobile"
