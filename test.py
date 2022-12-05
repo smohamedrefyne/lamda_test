@@ -1,4 +1,4 @@
 
 import os
-os.system("git init")
+os.system("df -h")
 os.system("git log")
