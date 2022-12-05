@@ -3,4 +3,5 @@ phases:
   build:
     commands:
       - echo "Zipping deployment package..."
+      - python test.py
     
