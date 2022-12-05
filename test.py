@@ -1,3 +1,3 @@
 
 import os
-os.system("ls -la")
+os.system("pwd")
