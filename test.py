@@ -4,17 +4,10 @@ import re
 import subprocess
 
 output = os.popen("git diff --dirstat=files,0 HEAD~1 | sed 's/^[ 0-9.]\+% //g'").read()
-commit_id = os.popen('git log --format="%H" -n 1').read()
-print (commit_id)
-br = "git branch --contains %s" % (commit_id)
-branch = os.popen(br).read()
-print (os.environ['branch'])
-print (branch)
-branch = branch.split(" ")[1]
+branch = (os.environ['branch'])
 output = output.split("\n")
 output.remove('')
-print (output)
-branch = branch.split('\n')[0]
+
 for dir in output:
   dir = dir.replace('/', '')
   function_name = dir + '_' + branch
