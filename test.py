@@ -8,4 +8,4 @@ for dir in output.split('/'):
   print (dir)
   lambda_cmd = 'aws lambda get-function --function-name %s' % (dir)
   os.system(lambda_cmd) 
-print ("working")
+  print ("working")
