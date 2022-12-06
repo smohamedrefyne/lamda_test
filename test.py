@@ -9,6 +9,7 @@ print (commit_id)
 br = "git branch --contains %s" % (commit_id)
 branch = os.popen(br).read()
 branch = branch.split(" ")[1]
+print (branch)
 output = output.split("\n")
 output.remove('')
 print (output)
