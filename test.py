@@ -1,4 +1,4 @@
 
 import os
 os.system("git diff --dirstat=files,0 HEAD~1 | sed 's/^[ 0-9.]\+% //g'")
-print ("working")
+os.system("aws lambda list-functions --region us-south-1")
