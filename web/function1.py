@@ -5,7 +5,7 @@ import os
 
 def lambda_handler(event, context):
 
-    print ("Hello World1")
+    print ("Hello World")
 
 
     return {
