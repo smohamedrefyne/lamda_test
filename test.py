@@ -8,8 +8,9 @@ commit_id = os.popen('git log --format="%H" -n 1').read()
 print (commit_id)
 br = "git branch --contains %s" % (commit_id)
 branch = os.popen(br).read()
-branch = branch.split(" ")[1]
+print (os.environ['SourceVariables.BranchName'])
 print (branch)
+branch = branch.split(" ")[1]
 output = output.split("\n")
 output.remove('')
 print (output)
